@@ -1,39 +1,15 @@
-/* Base Reset and Typography */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5faff;
-  color: #222;
-  line-height: 1.6;
-  padding-top: 60px; /* To prevent content hidden under fixed nav */
-}
-
-a {
-  color: #007acc;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Hero Section */
+/* Ensure hero content is visible and nicely centered */
 .hero {
   max-width: 900px;
   margin: 60px auto 40px;
   padding: 0 20px;
   text-align: center;
+  color: #007acc;
 }
 
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  color: #007acc;
 }
 
 .hero p {
@@ -41,7 +17,15 @@ a:hover {
   color: #004f99;
 }
 
-/* Stations Page */
+/* Limit logo size and keep it contained */
+.station-logo {
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+/* Station card container */
 .stations-container {
   max-width: 1100px;
   margin: 0 auto 60px;
@@ -52,6 +36,7 @@ a:hover {
   padding: 0 20px;
 }
 
+/* Each station card */
 .station-card {
   background: white;
   border-radius: 10px;
@@ -61,130 +46,5 @@ a:hover {
   text-align: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
-}
-
-.station-card:hover,
-.station-card:focus {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  outline: none;
-}
-
-.station-logo {
-  max-width: 150px;
-  margin-bottom: 15px;
-}
-
-.station-name {
-  font-size: 1.5rem;
-  color: #007acc;
-  margin-bottom: 10px;
-}
-
-.station-desc {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.listen-btn {
-  background-color: #007acc;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 30px;
-  font-weight: 600;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
-
-.listen-btn:hover,
-.listen-btn:focus {
-  background-color: #005f9e;
-  outline: none;
-}
-
-/* Contact Page */
-.contact-info {
-  max-width: 700px;
-  margin: 60px auto 40px;
-  padding: 0 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
-}
-
-.contact-info h1 {
-  color: #007acc;
-  margin-bottom: 15px;
-}
-
-.contact-info h2 {
-  margin-top: 25px;
-  color: #004f99;
-  margin-bottom: 8px;
-}
-
-.contact-info p {
-  color: #333;
-  font-size: 1rem;
-  margin-bottom: 12px;
-}
-
-.contact-info a {
-  color: #007acc;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-/* Navigation Bar */
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: white;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  z-index: 9999;
-}
-
-.nav-bar {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-  justify-content: space-between;
-}
-
-.nav-logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #007acc;
-  text-decoration: none;
-  letter-spacing: 1.2px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links a {
-  color: #004f99;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: background-color 0.25s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  background-color: #cce7ff;
-  color: #005f9e;
+  flex-shrink: 0;
 }
