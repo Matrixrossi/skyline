@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stations - Skyline Network</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <style>
+    .stations-container {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 30px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h1 {
+      color: #007acc;
+      margin-bottom: 40px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .station-list {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .station-card {
+      background: #f0faff;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgb(0 153 255 / 0.15);
+      flex: 1 1 320px;
+      max-width: 320px;
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      color: #004f99;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 280px;
+    }
+
+    .station-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgb(0 153 255 / 0.3);
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    .station-logo {
+      max-height: 80px;
+      margin-bottom: 20px;
+      object-fit: contain;
+    }
+
+    .station-name {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .station-desc {
+      font-size: 16px;
+      color: #333;
+      flex-grow: 1;
+      margin-bottom: 25px;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .station-list {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">Skyline</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="stations.html" class="active">Stations</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="stations-container">
+    <h1>Our Stations</h1>
+    <div class="station-list">
+      
+      <!-- Ross's Radio -->
+      <a href="rosss-radio.html" class="station-card" aria-label="Ross's Radio">
+        <img src="assets/rosss-radio-logo.png" alt="Ross's Radio Logo" class="station-logo" />
+        <div class="station-name">Ross's Radio</div>
+        <p class="station-desc">Feel-good tunes and club classics hosted live every weekend. Your go-to station for uplifting music and good vibes.</p>
+      </a>
+
+      <!-- Timeless FM -->
+      <a href="timeless-fm.html" class="station-card" aria-label="Timeless FM">
+        <img src="assets/timeless-fm-logo.png" alt="Timeless FM Logo" class="station-logo" />
+        <div class="station-name">Timeless FM</div>
+        <p class="station-desc">Classic hits from past decades combined with contemporary sounds. Perfect for those who love nostalgia and new beats.</p>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Skyline Network. All rights reserved.
+  </footer>
+</body>
+</html>
