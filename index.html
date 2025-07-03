@@ -2,69 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Skyline - The Home of Independent Radio</title>
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
   <header>
-    <div class="container nav-container">
+    <nav class="container">
       <h1 class="logo">Skyline</h1>
-      <nav>
-        <ul class="nav-list">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="stations.html">Stations</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <span class="hamburger"></span>
-      </button>
-    </div>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="stations.html">Stations</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <section class="hero">
     <div class="container">
-      <h2>The Home of Independent Radio</h2>
-      <p>Skyline is a network that brings passionate, independent radio stations together under one roof.</p>
-      <a href="stations.html" class="btn">Explore Stations</a>
+      <h1>Welcome to Skyline</h1>
+      <p>The Home of Independent Radio. Bringing passionate broadcasters together under one roof.</p>
+      <a href="stations.html" class="btn-primary">Explore Stations</a>
     </div>
   </section>
 
-  <section class="features">
-    <div class="container">
-      <h3>Why Join Skyline?</h3>
-      <div class="feature-grid">
-        <div class="feature">
-          <h4>Supportive Network</h4>
-          <p>Be part of a growing community of broadcasters helping each other thrive.</p>
-        </div>
-        <div class="feature">
-          <h4>Visibility</h4>
-          <p>Get your station featured and discovered by new audiences.</p>
-        </div>
-        <div class="feature">
-          <h4>Tools & Resources</h4>
-          <p>Access branding, promotion, and hosting tools for your station.</p>
-        </div>
-      </div>
+  <section class="features container">
+    <div class="feature">
+      <h3>Supportive Network</h3>
+      <p>Join a growing community of broadcasters helping each other thrive.</p>
+    </div>
+    <div class="feature">
+      <h3>Visibility</h3>
+      <p>Get your station featured and discovered by new audiences.</p>
+    </div>
+    <div class="feature">
+      <h3>Tools & Resources</h3>
+      <p>Access branding, promotion, and hosting tools for your station.</p>
     </div>
   </section>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2025 Skyline Network. All rights reserved.</p>
-    </div>
+    <p>&copy; 2025 Skyline Network. All rights reserved.</p>
   </footer>
-
-  <script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const navList = document.querySelector('.nav-list');
-
-    navToggle.addEventListener('click', () => {
-      navList.classList.toggle('open');
-    });
-  </script>
 </body>
 </html>
