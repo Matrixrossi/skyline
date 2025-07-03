@@ -5,6 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact Us - Skyline</title>
   <link rel="stylesheet" href="assets/styles.css" />
+  <style>
+    /* Center container */
+    .contact-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f9fcff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgb(0 153 255 / 0.1);
+      text-align: center;
+    }
+
+    /* Contact Us button */
+    #showFormBtn {
+      background-color: #0099ff;
+      color: white;
+      border: none;
+      padding: 18px 36px;
+      font-size: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #showFormBtn:hover {
+      background-color: #007acc;
+    }
+
+    /* Form styles */
+    .contact-form {
+      display: none;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccddee;
+      border-radius: 6px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .contact-form button {
+      background-color: #0099ff;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-right: 10px;
+    }
+
+    .contact-form button:hover {
+      background-color: #007acc;
+    }
+
+    .contact-form .cancel-btn {
+      background-color: #ccc;
+      color: #333;
+    }
+
+    .contact-form .cancel-btn:hover {
+      background-color: #999;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -22,9 +100,8 @@
   </header>
 
   <section class="contact">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <p>If you’d like to join the Skyline network or have a general enquiry, just fill out the form below and we’ll get back to you as soon as possible.</p>
+    <div class="container contact-container">
+      <button id="showFormBtn">Contact Us</button>
 
       <form class="contact-form" onsubmit="return false;">
         <label for="name">Name</label>
@@ -37,6 +114,7 @@
         <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
 
         <button type="submit" disabled>Send Message (Coming Soon)</button>
+        <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
       </form>
     </div>
   </section>
@@ -46,5 +124,22 @@
       <p>&copy; 2025 Skyline Network. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    const showFormBtn = document.getElementById('showFormBtn');
+    const contactForm = document.querySelector('.contact-form');
+    const cancelBtn = document.getElementById('cancelBtn');
+
+    showFormBtn.addEventListener('click', () => {
+      showFormBtn.style.display = 'none';
+      contactForm.style.display = 'block';
+    });
+
+    cancelBtn.addEventListener('click', () => {
+      contactForm.style.display = 'none';
+      showFormBtn.style.display = 'inline-block';
+    });
+  </script>
 </body>
 </html>
+
