@@ -3,120 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stations - Skyline Network</title>
+  <title>Skyline Network — Stations</title>
   <link rel="stylesheet" href="assets/styles.css" />
   <style>
-    .stations-container {
-      max-width: 1000px;
-      margin: 50px auto;
-      padding: 0 30px;
+    body {
+      background: linear-gradient(135deg, #d0e8ff, #f0f8ff);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #004f99;
+      margin: 0;
+      padding: 0 20px 40px;
+      min-height: 100vh;
     }
 
-    h1 {
-      color: #007acc;
-      margin-bottom: 40px;
-      font-weight: 700;
+    .hero {
       text-align: center;
+      padding: 60px 10px 40px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #007acc;
+      letter-spacing: 0.8px;
     }
 
-    .station-list {
-      display: flex;
+    .stations-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
       gap: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .station-card {
-      background: #f0faff;
-      border-radius: 14px;
-      box-shadow: 0 4px 12px rgb(0 153 255 / 0.15);
-      flex: 1 1 320px;
-      max-width: 320px;
-      padding: 25px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0, 95, 180, 0.15);
+      padding: 25px 20px 30px;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
-      color: #004f99;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 280px;
     }
-
     .station-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgb(0 153 255 / 0.3);
-      color: #007acc;
-      text-decoration: none;
+      transform: scale(1.05);
+      box-shadow: 0 12px 30px rgba(0, 120, 220, 0.35);
     }
 
     .station-logo {
-      max-height: 80px;
-      margin-bottom: 20px;
-      object-fit: contain;
+      max-width: 220px;
+      margin-bottom: 22px;
+      filter: drop-shadow(0 0 2px rgba(0, 122, 204, 0.6));
+      transition: filter 0.3s ease;
+    }
+    .station-card:hover .station-logo {
+      filter: drop-shadow(0 0 6px #0091ff);
     }
 
     .station-name {
-      font-size: 24px;
+      font-size: 1.6rem;
       font-weight: 700;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
+      color: #004f99;
+      letter-spacing: 1.1px;
     }
 
     .station-desc {
-      font-size: 16px;
-      color: #333;
-      flex-grow: 1;
-      margin-bottom: 25px;
+      font-size: 1rem;
+      color: #0066cc;
+      margin-bottom: 20px;
+      font-weight: 500;
+      min-height: 60px;
     }
 
-    /* Responsive */
-    @media (max-width: 700px) {
-      .station-list {
-        flex-direction: column;
-        align-items: center;
+    .listen-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: #007acc;
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 35px;
+      letter-spacing: 1.1px;
+      transition: background 0.25s ease;
+      user-select: none;
+    }
+    .listen-btn:hover {
+      background: #005f9e;
+    }
+
+    @media (max-width: 400px) {
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1 class="logo">Skyline</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="stations.html" class="active">Stations</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <section class="hero">
+    <h1>Welcome to Skyline Network</h1>
+    <p>Your gateway to the freshest radio stations — tuned to bring you the best vibes 24/7.</p>
+  </section>
 
   <main class="stations-container">
-    <h1>Our Stations</h1>
-    <div class="station-list">
-      
-      <!-- Ross's Radio -->
-      <a href="rosss-radio.html" class="station-card" aria-label="Ross's Radio">
-        <img src="assets/rosss-radio-logo.png" alt="Ross's Radio Logo" class="station-logo" />
-        <div class="station-name">Ross's Radio</div>
-        <p class="station-desc">Feel-good tunes and club classics hosted live every weekend. Your go-to station for uplifting music and good vibes.</p>
-      </a>
+    <article class="station-card" tabindex="0">
+      <img src="assets/rosss-radio-logo.png" alt="Ross's Radio Logo" class="station-logo" />
+      <h2 class="station-name">Ross's Radio</h2>
+      <p class="station-desc">Feel-good tunes, club classics, and the freshest hits all day long.</p>
+      <a href="rosss-radio.html" class="listen-btn" aria-label="Listen Live to Ross's Radio">Listen Live</a>
+    </article>
 
-      <!-- Timeless FM -->
-      <a href="timeless-fm.html" class="station-card" aria-label="Timeless FM">
-        <img src="assets/timeless-fm-logo.png" alt="Timeless FM Logo" class="station-logo" />
-        <div class="station-name">Timeless FM</div>
-        <p class="station-desc">Classic hits from past decades combined with contemporary sounds. Perfect for those who love nostalgia and new beats.</p>
-      </a>
-    </div>
+    <article class="station-card" tabindex="0">
+      <img src="assets/timeless-fm-logo.png" alt="Timeless FM Logo" class="station-logo" />
+      <h2 class="station-name">Timeless FM</h2>
+      <p class="station-desc">Classic tracks and timeless anthems that never go out of style.</p>
+      <a href="#" class="listen-btn" aria-label="Listen Live to Timeless FM">Listen Live</a>
+    </article>
   </main>
-
-  <footer>
-    &copy; 2025 Skyline Network. All rights reserved.
-  </footer>
 </body>
 </html>
