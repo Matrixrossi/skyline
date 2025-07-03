@@ -1,109 +1,190 @@
-body {
+/* Base Reset and Typography */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9fcff;
-  color: #333;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-header {
-  background-color: #e6f2ff;
-  padding: 20px 0;
-  border-bottom: 2px solid #cce4ff;
-}
-
-.logo {
-  font-size: 28px;
-  color: #007acc;
-  margin: 0;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
   padding: 0;
 }
 
-nav a {
-  text-decoration: none;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5faff;
+  color: #222;
+  line-height: 1.6;
+  padding-top: 60px; /* To prevent content hidden under fixed nav */
+}
+
+a {
   color: #007acc;
-  font-weight: 500;
+  text-decoration: none;
 }
 
-nav a.active,
-nav a:hover {
-  border-bottom: 2px solid #007acc;
+a:hover {
+  text-decoration: underline;
 }
 
+/* Hero Section */
 .hero {
-  background: linear-gradient(to bottom, #e0f4ff, #f9fcff);
-  padding: 60px 20px;
+  max-width: 900px;
+  margin: 60px auto 40px;
+  padding: 0 20px;
   text-align: center;
 }
 
-.hero h2 {
-  font-size: 36px;
-  color: #005fa3;
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #007acc;
 }
 
 .hero p {
-  font-size: 18px;
-  margin-top: 10px;
-  color: #555;
+  font-size: 1.25rem;
+  color: #004f99;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background-color: #0099ff;
+/* Stations Page */
+.stations-container {
+  max-width: 1100px;
+  margin: 0 auto 60px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.station-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  width: 280px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.station-card:hover,
+.station-card:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  outline: none;
+}
+
+.station-logo {
+  max-width: 150px;
+  margin-bottom: 15px;
+}
+
+.station-name {
+  font-size: 1.5rem;
+  color: #007acc;
+  margin-bottom: 10px;
+}
+
+.station-desc {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.listen-btn {
+  background-color: #007acc;
   color: white;
-  text-decoration: none;
-  border-radius: 6px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  display: inline-block;
   transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #007acc;
+.listen-btn:hover,
+.listen-btn:focus {
+  background-color: #005f9e;
+  outline: none;
 }
 
-.features {
-  padding: 60px 20px;
-  background-color: #ffffff;
+/* Contact Page */
+.contact-info {
+  max-width: 700px;
+  margin: 60px auto 40px;
+  padding: 0 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.07);
 }
 
-.features h3 {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 40px;
+.contact-info h1 {
+  color: #007acc;
+  margin-bottom: 15px;
+}
+
+.contact-info h2 {
+  margin-top: 25px;
+  color: #004f99;
+  margin-bottom: 8px;
+}
+
+.contact-info p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.contact-info a {
   color: #007acc;
 }
 
-.feature-grid {
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation Bar */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 9999;
+}
+
+.nav-bar {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  justify-content: space-between;
 }
 
-.feature {
-  background-color: #f1f9ff;
-  padding: 20px;
-  border-radius: 10px;
-  width: 280px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #007acc;
+  text-decoration: none;
+  letter-spacing: 1.2px;
 }
 
-footer {
-  background-color: #e6f2ff;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 14px;
-  color: #555;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #004f99;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: #cce7ff;
+  color: #005f9e;
 }
